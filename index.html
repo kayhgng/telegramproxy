@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KayH GNG Proxy Telegram Collector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e0f7fa; /* Light blue background */
+            color: #0277bd; /* Dark blue text */
+        }
+        h1 {
+            color: #01579b; /* Darker blue for the header */
+            text-align: center; /* Center the header */
+        }
+        button {
+            background-color: #0288d1; /* Button blue */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+            display: block; /* Block display for centering */
+            margin: 0 auto; /* Center the button */
+        }
+        button:hover {
+            background-color: #0277bd; /* Darker blue on hover */
+        }
+        .result {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ffffff; /* White background for results */
+            border-radius: 5px; /* Rounded corners */
+            overflow-wrap: break-word; /* Prevent overflow */
+        }
+        @media (max-width: 600px) {
+            body {
+                margin: 10px; /* Reduce margin on mobile */
+            }
+            button {
+                width: 100%; /* Full width button on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>MTProto KayH GNG Collector</h1>
+    <button id="fetchData">Give me Proxy!</button>
+    <div id="results" class="result"></div>
+
+    <script>
+        document.getElementById('fetchData').addEventListener('click', function() {
+            fetch('https://mtpro.xyz/api/?type=mtproto')
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = '';
+                    for (let i = 0; i < 10; i++) {
+                        resultsDiv.innerHTML += `<p>Proxy Link: <a href="https://t.me/proxy?server=${data[i].host}&port=${data[i].port}&secret=${data[i].secret}">https://t.me/proxy?server=${data[i].host}&port=${data[i].port}&secret=${data[i].secret}</a></p>`;
+                    }
+                })
+                .catch(error => console.error('Error giving Proxy :( :', error));
+        });
+    </script>
+</body>
+</html>
