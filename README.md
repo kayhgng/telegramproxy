@@ -1,5 +1,10 @@
 # telegramproxy
 
+## لینک دونیت ارز دیجیتال TON:
+
+UQBNCEBZZEdUkchBb3wGYzkZWyclSdmLPE_yQw1XWCVjGeS5
+
+
 
 ## توضیحات
 
