@@ -15,6 +15,10 @@
             color: #01579b; /* Darker blue for the header */
             text-align: center; /* Center the header */
         }
+        h2 {
+            color: #01579b; /* Darker blue for the header */
+            text-align: center; /* Center the header */
+        }
         button {
             background-color: #0288d1; /* Button blue */
             color: white; /* White text */
@@ -49,10 +53,12 @@
 </head>
 <body>
     <h1>MTProto KayH GNG Collector</h1>
+    <h2>لازم به ذکر است برای دریافت پروکسی ها بنا بر فیلتر شدن آدرس از فیلترشکن استفاده کنید</h2>
     <button id="fetchData">Give me Proxy!</button>
     <div id="results" class="result"></div>
 
     <script>
+        
         document.getElementById('fetchData').addEventListener('click', function() {
             fetch('https://mtpro.xyz/api/?type=mtproto')
                 .then(response => response.json())
